@@ -123,45 +123,47 @@ export default function AppV2() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.5fr)', gridTemplateRows: 'auto auto', gap: '2rem' }} className="md-flex-col">
            {/* Card 1: Large Wide */}
-           <motion.div whileHover={{ scale: 1.02 }} style={{ background: 'white', borderRadius: '32px', overflow: 'hidden', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 20px 40px rgba(0,0,0,0.02)', gridColumn: '1 / span 2', display: 'flex', alignItems: 'center' }} className="md-flex-col">
+           <motion.div whileHover={{ scale: 1.03, y: -10, boxShadow: '0 30px 60px rgba(0,0,236,0.15)' }} transition={{ type: 'spring', stiffness: 300 }} style={{ background: 'white', borderRadius: '32px', overflow: 'hidden', border: '1px solid rgba(0,0,236,0.1)', gridColumn: '1 / span 2', display: 'flex', alignItems: 'center' }} className="md-flex-col">
               <div style={{ padding: '4rem', flex: 1 }}>
-                <div style={{ color: '#0000EC', marginBottom: '1.5rem' }}>{features[0].icon}</div>
+                <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 2 }} style={{ color: '#0000EC', marginBottom: '1.5rem', background: 'rgba(226,227,1,0.2)', width: 'fit-content', padding: '1rem', borderRadius: '20px' }}>{features[0].icon}</motion.div>
                 <h3 style={{ fontSize: '2.5rem', fontWeight: 900, marginBottom: '1rem' }}>{features[0].title}</h3>
                 <p style={{ fontSize: '1.2rem', color: '#555' }}>{features[0].desc}</p>
               </div>
-              <div style={{ flex: 1, minHeight: '350px', background: '#F8F9FA' }}>
-                <img src={features[0].image} alt={features[0].title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div style={{ flex: 1, minHeight: '350px', background: '#E2E301', padding: '2rem' }}>
+                <motion.img whileHover={{ scale: 1.05 }} src={features[0].image} alt={features[0].title} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '20px' }} />
               </div>
            </motion.div>
 
            {/* Card 2: Tall */}
-           <motion.div whileHover={{ scale: 1.02 }} style={{ background: '#E2E301', color: '#111', borderRadius: '32px', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+           <motion.div whileHover={{ scale: 1.03, y: -10, boxShadow: '0 30px 60px rgba(226,227,1,0.3)' }} style={{ background: '#E2E301', color: '#0000EC', borderRadius: '32px', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ padding: '3rem', paddingBottom: '1rem' }}>
-                <div style={{ marginBottom: '1.5rem', color: '#0000EC' }}>{features[1].icon}</div>
+                <motion.div animate={{ rotate: [0, 10, -10, 0] }} transition={{ repeat: Infinity, duration: 1.5 }} style={{ marginBottom: '1.5rem', background: '#0000EC', color: '#E2E301', width: 'fit-content', padding: '1rem', borderRadius: '20px' }}>{features[1].icon}</motion.div>
                 <h3 style={{ fontSize: '2rem', fontWeight: 900, marginBottom: '1rem' }}>{features[1].title}</h3>
-                <p style={{ fontSize: '1.1rem', color: '#333' }}>{features[1].desc}</p>
+                <p style={{ fontSize: '1.1rem', color: '#0000EC', opacity: 0.8 }}>{features[1].desc}</p>
               </div>
               <div style={{ marginTop: 'auto', padding: '2rem' }}>
-                <img src={features[1].image} alt={features[1].title} style={{ width: '100%', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
+                <motion.img whileHover={{ scale: 1.1 }} src={features[1].image} alt={features[1].title} style={{ width: '100%', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,236,0.1)' }} />
               </div>
            </motion.div>
 
            {/* Cards 3 & 4 Stacked inside right column */}
            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-             <motion.div whileHover={{ scale: 1.02 }} style={{ background: 'white', borderRadius: '32px', padding: '3rem', border: '1px solid rgba(0,0,0,0.05)', display: 'flex', alignItems: 'center', gap: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.02)' }} className="md-flex-col">
+             <motion.div whileHover={{ scale: 1.04, x: -10 }} style={{ background: 'white', borderRadius: '32px', padding: '3rem', border: '1px solid rgba(0,0,236,0.1)', display: 'flex', alignItems: 'center', gap: '2rem', boxShadow: '0 20px 40px rgba(0,0,236,0.05)' }} className="md-flex-col">
                 <div style={{ flex: 1 }}>
+                  <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ repeat: Infinity, duration: 2 }} style={{ color: '#0000EC', marginBottom: '1rem' }}>{features[2].icon}</motion.div>
                   <h3 style={{ fontSize: '1.8rem', fontWeight: 900, marginBottom: '0.5rem' }}>{features[2].title}</h3>
                   <p style={{ color: '#555' }}>{features[2].desc}</p>
                 </div>
-                <img src={features[2].image} alt={features[2].title} style={{ width: '150px', height: '150px', borderRadius: '50%', objectFit: 'cover', border: '8px solid #F8F9FA' }} />
+                <motion.img whileHover={{ rotate: 15 }} src={features[2].image} alt={features[2].title} style={{ width: '150px', height: '150px', borderRadius: '50%', objectFit: 'cover', border: '8px solid #E2E301' }} />
              </motion.div>
 
-             <motion.div whileHover={{ scale: 1.02 }} style={{ background: '#0000EC', color: 'white', borderRadius: '32px', padding: '3rem', display: 'flex', alignItems: 'center', gap: '2rem', boxShadow: '0 20px 40px rgba(0,0,236,0.2)' }} className="md-flex-col">
+             <motion.div whileHover={{ scale: 1.04, x: -10 }} style={{ background: '#0000EC', color: 'white', borderRadius: '32px', padding: '3rem', display: 'flex', alignItems: 'center', gap: '2rem', boxShadow: '0 20px 40px rgba(0,0,236,0.4)', border: '2px solid #E2E301' }} className="md-flex-col">
                 <div style={{ flex: 1 }}>
+                  <motion.div animate={{ y: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1 }} style={{ color: '#E2E301', marginBottom: '1rem' }}>{features[3].icon}</motion.div>
                   <h3 style={{ fontSize: '1.8rem', fontWeight: 900, marginBottom: '0.5rem' }}>{features[3].title}</h3>
                   <p style={{ color: 'rgba(255,255,255,0.8)' }}>{features[3].desc}</p>
                 </div>
-                <img src={features[3].image} alt={features[3].title} style={{ width: '150px', height: '150px', borderRadius: '24px', objectFit: 'cover' }} />
+                <motion.img whileHover={{ scale: 1.1 }} src={features[3].image} alt={features[3].title} style={{ width: '150px', height: '150px', borderRadius: '24px', objectFit: 'cover' }} />
              </motion.div>
            </div>
         </div>
