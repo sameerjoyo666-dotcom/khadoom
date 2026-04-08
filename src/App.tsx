@@ -108,7 +108,7 @@ function App() {
               whileHover={{ scale: 1.05 }}
               src={khadoomLogoVertical} 
               alt="Khadoom Logo" 
-              style={{ height: '52px', width: 'auto', objectFit: 'contain' }} 
+              style={{ height: 'clamp(40px, 8vw, 52px)', width: 'auto', objectFit: 'contain' }} 
             />
           </div>
           <ul className="nav-links">
@@ -120,8 +120,8 @@ function App() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             href="#contact" 
-            className="btn btn-secondary" 
-            style={{ padding: '0.6rem 1.5rem', fontSize: '1rem', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+            className="btn btn-secondary nav-btn" 
+            style={{ fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}
           >
             <motion.div
               animate={{ rotate: [0, -15, 15, -15, 0], scale: [1, 1.1, 1.1, 1] }}
@@ -129,7 +129,7 @@ function App() {
             >
               <img src={khadoomIconBlue} alt="Chat Icon" style={{ width: '22px', height: '22px', objectFit: 'contain' }} />
             </motion.div>
-            Chat with me
+            <span className="chat-btn-text">Chat with me</span>
           </motion.a>
         </div>
       </motion.nav>
@@ -315,14 +315,14 @@ function App() {
       </section>
 
       {/* Advanced Contact Banner Section */}
-      <section className="container" style={{ padding: '8rem 0 4rem 0', perspective: '1000px' }} id="contact">
+      <section className="section container" style={{ perspective: '1000px' }} id="contact">
         <motion.div 
           initial={{ opacity: 0, rotateX: 10, y: 50 }}
           whileInView={{ opacity: 1, rotateX: 0, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ type: "spring", stiffness: 80, damping: 20 }}
           style={{ 
-            padding: '6rem 3rem', 
+            padding: 'clamp(2.5rem, 8vw, 6rem) clamp(1rem, 5vw, 3rem)', 
             textAlign: 'center', 
             background: 'linear-gradient(135deg, var(--color-secondary) 0%, #000088 100%)', 
             color: 'white', 
@@ -352,10 +352,10 @@ function App() {
             <Smartphone size={44} color="var(--color-secondary)" />
           </motion.div>
           
-          <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: '1.5rem', color: 'white', position: 'relative', zIndex: 10, fontWeight: 800, textShadow: '0 10px 30px rgba(0,0,0,0.3)' }}>
+          <h2 style={{ fontSize: 'clamp(1.8rem, 6vw, 4rem)', marginBottom: '1.5rem', color: 'white', position: 'relative', zIndex: 10, fontWeight: 800, textShadow: '0 10px 30px rgba(0,0,0,0.3)' }}>
             Leave the rest strictly <span style={{ color: 'var(--color-primary)' }}>to me.</span>
           </h2>
-          <p style={{ maxWidth: '650px', margin: '0 auto 3.5rem', fontSize: '1.25rem', color: 'rgba(255,255,255,0.9)', position: 'relative', zIndex: 10, lineHeight: 1.6 }}>
+          <p style={{ maxWidth: '650px', margin: '0 auto 3.5rem', fontSize: '1.1rem', color: 'rgba(255,255,255,0.9)', position: 'relative', zIndex: 10, lineHeight: 1.6 }}>
             Whatever language you speak, I can understand. Stop stressing over daily chores and let Qatar's smartest AI assistant take over.
           </p>
           
@@ -364,7 +364,7 @@ function App() {
             whileTap={{ scale: 0.95 }}
             href="https://wa.me/97474447766" 
             className="btn btn-primary" 
-            style={{ padding: '1.25rem 3.5rem', fontSize: '1.2rem', position: 'relative', zIndex: 10, borderRadius: 'var(--border-radius-pill)', border: '2px solid rgba(255,255,255,0.2)' }}
+            style={{ padding: 'clamp(0.8rem, 3vw, 1.25rem) clamp(1.5rem, 5vw, 3.5rem)', fontSize: 'clamp(1rem, 3vw, 1.2rem)', position: 'relative', zIndex: 10, borderRadius: 'var(--border-radius-pill)', border: '2px solid rgba(255,255,255,0.2)' }}
           >
             <span style={{ position:'relative', zIndex: 2, display:'flex', alignItems:'center', gap:'1rem', fontWeight: 700 }}>
                Message +974 7444 7766 
@@ -473,8 +473,8 @@ function App() {
             hidden: { opacity: 0 },
             visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
           }}
-          className="container" 
-          style={{ display: 'grid', gridTemplateColumns: '1.5fr 2fr 1fr', gap: '4rem', position: 'relative', zIndex: 10 }}
+          className="container footer-grid" 
+          style={{ position: 'relative', zIndex: 10 }}
         >
           {/* Brand Col */}
           <motion.div variants={itemVariants}>
