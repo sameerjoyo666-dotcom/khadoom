@@ -13,11 +13,10 @@ import {
   MapPin,
   Smartphone,
   Star,
-  ArrowRight,
-  MessageCircle
+  ArrowRight
 } from 'lucide-react';
 import khadoomLogoVertical from './assets/KHADOOM LOGO - VERTICAL-SCREEN-02 (1).png';
-import khadoomIcon from './assets/Khadoom - ICon.png';
+import khadoomIconBlue from './assets/Icon on blue.png';
 import './App.css';
 
 const faqs = [
@@ -126,9 +125,9 @@ function App() {
           >
             <motion.div
               animate={{ rotate: [0, -15, 15, -15, 0], scale: [1, 1.1, 1.1, 1] }}
-              transition={{ repeat: Infinity, duration: 1.5, repeatDelay: 2 }}
+              transition={{ repeat: Infinity, duration: 2, repeatDelay: 1 }}
             >
-              <MessageCircle size={18} />
+              <img src={khadoomIconBlue} alt="Chat Icon" style={{ width: '22px', height: '22px', objectFit: 'contain' }} />
             </motion.div>
             Chat with me
           </motion.a>
